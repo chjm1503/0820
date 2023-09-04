@@ -1,0 +1,6 @@
+target
+build
+.cache
+.idea
+.vscode
+*.lock
