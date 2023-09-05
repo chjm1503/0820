@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "source-rs/extern_to_c",
+    "source-rs/hello_world"
+]
