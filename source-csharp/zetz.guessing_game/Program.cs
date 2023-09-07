@@ -20,7 +20,13 @@ namespace zetz
             {
                 Console.WriteLine("Please input your guess.");
 
-                guess = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    guess = Convert.ToInt32(Console.ReadLine());
+                } catch (Exception exception) {
+                    Console.WriteLine($"{exception}");
+                    continue;
+                }
 
                 if (guess == secretNumber)
                 {
