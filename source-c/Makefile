@@ -1,14 +1,8 @@
-OUTPUT_PATH  := ./build
+build/guessing_game/guessing_game: build/obj/guessing_game.o build/obj/guessing_game_main.o
+	gcc build/obj/guessing_game.o build/obj/guessing_game_main.o -o build/guessing_game/guessing_game
 
-guessing_game: guessing_game.o guessing_game_main.o
-	gcc -o builc/cache/guessing_game.o builc/cache/guessing_game_main.o
+build/obj/guessing_game.o: guessing_game/guessing_game.c
+	gcc -I../include -c guessing_game/guessing_game.c -o build/obj/guessing_game.o
 
-guessing_game.o : guessing_game/guessing_game.c
-	gcc -c guessing_game/guessing_game.c -I../include 
-
-guessing_game_main.o: guessing_game/main.c
-	gcc -c guessing_game/main.c -I../include
-
-
-clean:
-	rm -rf build/*make
+build/obj/guessing_game_main.o: guessing_game/guessing_game_main.c
+	gcc -I../include -c guessing_game/guessing_game_main.c -o build/obj/guessing_game_main.o
