@@ -1,6 +1,5 @@
 package xyz.zetz.fj.guessing_game;
 
-import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
