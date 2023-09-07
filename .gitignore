@@ -4,3 +4,7 @@ build
 .idea
 .vscode
 *.lock
+
+# 忽略c#项目非代码文件
+bin
+obj
