@@ -1,5 +1,5 @@
 [workspace]
 members = [
-    "source-rs/extern_to_c",
-    "source-rs/guessing_game"
+    "source-lang/rust/extern_to_c",
+    "source-lang/rust/guessing_game"
 ]

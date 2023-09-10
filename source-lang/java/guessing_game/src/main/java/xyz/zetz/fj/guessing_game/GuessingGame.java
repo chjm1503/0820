@@ -14,6 +14,7 @@ public class GuessingGame {
 
         Scanner scan = new Scanner(System.in);
         int guess = 0;
+        
         while (true) {
             System.out.println("Please input your guess.");
             if (scan.hasNextInt()) {
