@@ -5,7 +5,11 @@ build
 .vscode
 *.lock
 .VSCodeCounter
+.vs
 
 # 忽略c#项目非代码文件
 bin
 obj
+
+# 忽略自编译第三方库
+lib64

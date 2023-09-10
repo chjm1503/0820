@@ -42,6 +42,9 @@ python的一些约定
 # class 关键字，创建一个对象
 
 
+import random
+
+
 class GuessingName:
 
     # def 关键字，创建一个函数
@@ -52,36 +55,43 @@ class GuessingName:
         # __ 表示该变量是私有变量，只能由该对象本身访问
         self.__secret_number = random.randint(1, 101)
 
+    def _get_guess_number(self):
+        guess = input("Please input your guess.")
+
+        try:
+            guess = int(guess)
+        except ValueError as _:
+            return None
+
+        return guess
+
     def run(self):
         print("Guess the number!")
 
-        guess = 0
+        guess_num: int = 0
         while True:
-            guess = input("Please input your guess.")
+            guess_num = self._get_guess_number()
 
-            try:
-                guess = int(guess)
-            except ValueError as _:
+            if not guess_num:
                 continue
-
-            if guess == self.__secret_number:
+            elif guess_num == self.__secret_number:
                 print('You win!')
                 break
-            elif guess < self.__secret_number:
+            elif guess_num < self.__secret_number:
                 print('Too small!')
             else:
                 print('Too big!')
 
 
-def for_in_example():
-    '''
-    循环语句 for ... in ... 使用举例
-    ''' 
-    for i in ['H', 'e', 'l', 'l', 'o', ',', 'w', 'o', 'r', 'l', 'd', '!']:
-        print(f'{i}', end='')
-    print()
+if __name__ == "__main__":
 
+    def for_in_example():
+        '''
+        循环语句 for ... in ... 使用举例
+        '''
+        for i in "Hello, world!":  # ['H', 'e', 'l', 'l', 'o', ',', 'w', 'o', 'r', 'l', 'd', '!']:
+            print(f'{i}', end='')
+        print()
+    for_in_example()
 
-for_in_example()
-
-GuessingName().run()
+    GuessingName().run()
